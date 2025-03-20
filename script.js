@@ -17,11 +17,12 @@ document.getElementById('loan-form').addEventListener('submit', function(event) 
             break;
         case 'quarterly':
             periodsPerYear = 4;
-            periodicRate = rate / periodsPerYear;
+            periodicRate = Math.pow(1 +rate, 1/4)-1;
+            console.log(periodicRate);
             break;
         case 'semi-annually':
             periodsPerYear = 2;
-            periodicRate = rate / periodsPerYear;
+            periodicRate =  Math.pow(1 +rate, 1/2)-1;
             break;
         case 'annually':
             periodsPerYear = 1;
@@ -31,7 +32,7 @@ document.getElementById('loan-form').addEventListener('submit', function(event) 
 
     const totalPeriods = duration * periodsPerYear;
 
-    let tableHTML = '<table><tr><th>Période</th><th>Capital Restant en début de période</th><th>Intérêt</th><th>Amortissement</th><th>Annuité emprunt</th><th>Capital Restant en fin de période</th></tr>';
+    let tableHTML = '<table><tr><th>Anées</th><th>Capital Restant en début de période</th><th>Intérêt</th><th>Amortissement</th><th>Annuité emprunt</th><th>Capital Restant en fin de période</th></tr>';
 
     let remainingCapital = amount;
     let totalInterest = 0;
