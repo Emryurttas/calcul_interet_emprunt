@@ -7,6 +7,10 @@ document.getElementById('loan-form').addEventListener('submit', function(event) 
     const periodicity = document.getElementById('periodicity').value;
     const repaymentType = document.getElementById('repayment-type').value;
 
+    if (amount <= 0 || rate < 0 || duration <= 0) {
+        alert("Veuillez entrer des valeurs valides (supérieures à zéro).");
+        return;
+    }
     let periodsPerYear;
     let periodicRate;
 
@@ -17,12 +21,12 @@ document.getElementById('loan-form').addEventListener('submit', function(event) 
             break;
         case 'quarterly':
             periodsPerYear = 4;
-            periodicRate = Math.pow(1 +rate, 1/4)-1;
+            periodicRate = Math.pow(1 + rate, 1/4)-1;
             console.log(periodicRate);
             break;
         case 'semi-annually':
             periodsPerYear = 2;
-            periodicRate =  Math.pow(1 +rate, 1/2)-1;
+            periodicRate =  Math.pow(1 + rate, 1/2)-1;
             break;
         case 'annually':
             periodsPerYear = 1;
