@@ -9,9 +9,10 @@ body {
     background-color: #f0f4f8;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+    align-items: flex-start;
+    min-height: 100vh;
+    flex-direction: column;
+    padding: 10px;
     color: #333;
 }
 
@@ -20,9 +21,10 @@ body {
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    width: 100%;
+    width: 90%;
     max-width: 1200px;
-    margin: 20px;
+    margin: 20px auto;
+    overflow: hidden;
 }
 
 h1 {
@@ -80,14 +82,18 @@ button:hover {
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    max-height: 500px;
+    max-height: 400px;
     overflow-y: auto;
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
+    table-layout: auto;
 }
 
 table, th, td {
@@ -98,6 +104,8 @@ th, td {
     padding: 12px;
     text-align: center;
     font-size: 1em;
+    word-wrap: break-word;
+    white-space: nowrap;
 }
 
 th {
@@ -112,7 +120,7 @@ td {
 @media (max-width: 600px) {
     .container {
         padding: 20px;
-        max-width: 100%;
+        width: 100%;
     }
 
     h1 {
@@ -129,5 +137,9 @@ td {
 
     button {
         font-size: 1.1em;
+    }
+
+    .result-container {
+        max-height: 300px;
     }
 }
