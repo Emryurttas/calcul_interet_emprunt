@@ -32,7 +32,7 @@ document.getElementById('loan-form').addEventListener('submit', function(event) 
 
     const totalPeriods = duration * periodsPerYear;
 
-    let tableHTML = '<table><tr><th>Anées</th><th>Capital Restant en début de période</th><th>Intérêt</th><th>Amortissement</th><th>Annuité emprunt</th><th>Capital Restant en fin de période</th></tr>';
+    let tableHTML = '<table><tr><th>Années</th><th>Capital Restant en début de période</th><th>Intérêt</th><th>Amortissement</th><th>Annuité emprunt</th><th>Capital Restant en fin de période</th></tr>';
 
     let remainingCapital = amount;
     let totalInterest = 0;
